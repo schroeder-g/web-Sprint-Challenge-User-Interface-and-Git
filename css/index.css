@@ -68,7 +68,20 @@ html, body {
     width: 20%;
 }
 
-/* navbar */
+/* Header Animation & navbar */
+
+header{
+    animation: coloration 10s ease-in-out infinite;
+}
+
+@keyframes coloration {
+    0%{ background: #BE0AD1}
+    25%{ background: #F9082A}
+    50%{ background: #BE0AD1}
+    75%{ background: #4A1FD5}
+    100%{ background: #BE0AD1}
+
+}
 nav {
     display: flex;
     width: 80%;
@@ -298,23 +311,60 @@ h1 {
 
 /* responsive content */
 @media screen and (max-width: 600px) {
+    .title-bar{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo{
+        display: flex;
+        width: 50%;
+        margin-bottom: 2%;
+    }
+
+    
+    .intro p{
+        font-size: .75rem;
+    }
+    
     .main-content {
         flex-direction: column;
-        align-content: center;
+        align-items: center;
+        justify-items: center;
     }
 
     .content{
-        flex-flow: row-reverse wrap;
+        flex-flow: row nowrap;
         width: 80%;
+        border: 2px solid slategray;
+        margin-bottom: 3%;
     }
 
     .content h2 {
-        order: -1;
-        width: 50%;
-        align-self: flex-end;
+        display: flex;
+        width: 100%;
+        align-content: flex-start;
+        align-items: center;
+        justify-items: center;
     }
 
     .content img{
-        width: 50%;
+        display: none;
+    }
+
+    .content button{
+        display: flex;
+        order: -1;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        border: 0;
+        font-weight: bolder;
+
+    }
+
+    .content button:hover{
+        background: white;
+        color: crimson;
     }
 }
