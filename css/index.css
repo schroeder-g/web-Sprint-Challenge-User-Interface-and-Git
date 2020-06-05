@@ -18,7 +18,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	font-size: 62.5%;
 	font: inherit;
     vertical-align: baseline;
