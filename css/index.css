@@ -18,10 +18,10 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
+	/* border: 1px solid blue; */
+	font-size: 62.5%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    margin: 5%;
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +54,58 @@ table {
 
 html, body {
     height: 100%;
+    width: auto;
     font-family: 'Roboto', sans-serif;
+}
+
+.title-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 20%;
+}
+
+/* Header Animation & navbar */
+
+header{
+    animation: coloration 10s ease-in-out infinite;
+}
+
+@keyframes coloration {
+    0%{ background: #BE0AD1}
+    25%{ background: #F9082A}
+    50%{ background: #BE0AD1}
+    75%{ background: #4A1FD5}
+    100%{ background: #BE0AD1}
+
+}
+nav {
+    display: flex;
+    width: 80%;
+    align-content: center;
+    justify-content: space-around;
+}
+
+nav a {
+    display: flex;
+    color: black;
+    letter-spacing: .25rem;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a:hover{
+    color: crimson;
+}
+
+.jumbo{
+    display: block;
+    margin: 2% auto;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,18 +119,21 @@ p {
 }
 
 .container {
-    width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 0;
 }
 
 .top-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 20px;
+    margin: 0 4% 20px;
     border-bottom: 1px dashed black;
 }
 
+.text-container {
+    line-height: 1.24rem;
+}
 .top-content .text-container {
     width: 48%;
     padding: 0 1%;
@@ -99,6 +154,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0% 5%;
 }
 
 .middle-content .boxes .box {
@@ -110,6 +166,46 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.middle-content .boxes .box.one {
+    background: teal;
+}
+
+.middle-content .boxes .box.two {
+    background: gold;
+}
+
+.middle-content .boxes .box.three {
+    background: cadetBlue;
+}
+
+.middle-content .boxes .box.four {
+    background: coral;
+}
+
+.middle-content .boxes .box.five {
+    background: crimson;
+}
+
+.middle-content .boxes .box.six {
+    background: forestgreen;
+}
+
+.middle-content .boxes .box.seven {
+    background: darkorchid;
+}
+
+.middle-content .boxes .box.eight {
+    background: hotpink;
+}
+
+.middle-content .boxes .box.nine {
+    background: indigo;
+}
+
+.middle-content .boxes .box.ten {
+    background: dodgerblue;
 }
 
 .bottom-content {
@@ -143,4 +239,132 @@ footer nav {
 footer nav a {
     color: white;
     text-decoration: none;
+}
+
+/* About Page */
+
+.main-content{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin:0 4% 1%;
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-weight:bold;
+}
+
+.intro p{
+    font-size: 1.15rem;
+}
+
+.content{
+    display:flex;
+    width:42.5%;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    border-bottom: 2px dotted black;
+}
+
+.content img{
+    width: 100%;
+    margin-bottom: 1%;
+}
+.content h2{
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.content p{
+    margin-bottom: 1%;
+    padding: .75%;
+    font-weight: 500;
+}
+
+.content button {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 25%;
+    justify-content: center;
+    padding: 3%;
+    margin-bottom: 2%;
+    background: white;
+}
+
+.content button:hover{
+    background: black;
+    color: white;
+}
+
+.conclusion{
+    margin: 3% 4%;
+    font-weight: bold;
+}
+
+/* responsive content */
+@media screen and (max-width: 600px) {
+    .title-bar{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo{
+        display: flex;
+        width: 50%;
+        margin-bottom: 2%;
+    }
+
+    
+    .intro p{
+        font-size: .75rem;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .content{
+        flex-flow: row nowrap;
+        width: 80%;
+        border: 2px solid slategray;
+        margin-bottom: 3%;
+    }
+
+    .content h2 {
+        display: flex;
+        width: 100%;
+        align-content: flex-start;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .content img{
+        display: none;
+    }
+
+    .content button{
+        display: flex;
+        order: -1;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        border: 0;
+        font-weight: bolder;
+
+    }
+
+    .content button:hover{
+        background: white;
+        color: crimson;
+    }
 }
